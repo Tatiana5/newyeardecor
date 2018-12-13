@@ -1,0 +1,268 @@
+<!-- IF S_NYD_USER_SNOW -->
+	<!-- IF S_NYD_SNOW_POSITION -->
+		<script>
+			var nyd_snow_position = true,
+				nyd_url = '{BOARD_URL}' + 'ext/tatiana5/newyeardecor/styles/all/theme/';
+		</script>
+	<!-- ELSE -->
+		<script>
+			var nyd_snow_position = false,
+				nyd_url = '{BOARD_URL}' + 'ext/tatiana5/newyeardecor/styles/all/theme/';
+		</script>
+	<!-- ENDIF -->
+
+	<!-- IF S_NYD_SNOW_TYPE == '1' -->
+		<!-- // Let It Snow -->
+		<!-- INCLUDEJS @tatiana5_newyeardecor/let_it_snow_interactive.js -->
+	<!-- ENDIF -->
+
+	<!-- IF S_NYD_SNOW_TYPE == '2' or S_NYD_SNOW_TYPE == '3' or S_NYD_SNOW_TYPE == '4' or S_NYD_SNOW_TYPE == '5' or S_NYD_SNOW_TYPE == '6' -->
+		<!-- //Snowfall -->
+		<!-- INCLUDEJS @tatiana5_newyeardecor/snowfall_jquery_min.js -->
+
+		<script>
+			$(document).ready(function() {
+				<!-- IF S_NYD_SNOW_TYPE == '2' -->
+					$(document).snowfall(deviceorientation : true);
+				<!-- ELSEIF S_NYD_SNOW_TYPE == '3' -->
+					$(document).snowfall({deviceorientation : true, shadow : true, flakeCount:200});
+				<!-- ELSEIF S_NYD_SNOW_TYPE == '4' -->
+					$(document).snowfall({deviceorientation : true, round : true, minSize: 5, maxSize:8});
+				<!-- ELSEIF S_NYD_SNOW_TYPE == '5' -->
+					$(document).snowfall({deviceorientation : true, shadow : true, round : true,  minSize: 5, maxSize:8});
+				<!-- ELSEIF S_NYD_SNOW_TYPE == '6' -->
+					$(document).snowfall({deviceorientation : true, image : nyd_url+"images/flake.png", minSize: 10, maxSize:32});
+				<!-- ENDIF -->
+			});
+		</script>
+	<!-- ENDIF -->
+
+	<!-- IF S_NYD_SNOW_TYPE == '7' -->
+		<!-- INCLUDEJS @tatiana5_newyeardecor/processing.min.js -->
+	<!-- ENDIF -->
+
+	<!-- IF S_NYD_SNOW_TYPE == '8' -->
+		<svg class="svg-snowscene" xmlns="http://www.w3.org/2000/svg">
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		<circle class="snow" />
+		</svg>
+		<script>
+		function getRandom(min, max) {
+		return Math.random() * (max - min) + min;
+		}
+		 
+		(function letItSnow() {
+		var snowflakes = document.querySelectorAll('.snow');
+		for (var i = 0; i < snowflakes.length; i++) {
+		var snowflake = snowflakes[i];
+		snowflake.setAttribute('cx', getRandom(1, 100) + '%');
+		snowflake.setAttribute('cy', '-' + getRandom(1, 100));
+		snowflake.setAttribute('r', getRandom(1, 3));
+		}
+		})();
+		</script>
+	<!-- ENDIF -->
+
+	<!-- IF S_NYD_SNOW_TYPE == '9' -->
+		<!-- INCLUDEJS @tatiana5_newyeardecor/newysnow.js -->
+	<!-- ENDIF -->
+
+	<!-- IF S_NYD_SNOW_TYPE == '10' -->
+		<!-- INCLUDEJS @tatiana5_newyeardecor/snowstorm.js -->
+		<script>
+		$(document).ready(function() {
+			var snow_height = (nyd_snow_position) ? ($('.headerbar').offset().top+$('.headerbar').outerHeight()) : $(document).height();
+			var snow_count = (nyd_snow_position) ? 16 : 35;
+			snowStorm = new SnowStorm("./ext/tatiana5/newyeardecor/styles/all/theme/images/snow/", snow_height, snow_count, snow_count);
+		});
+		</script>
+	<!-- ENDIF -->
+
+	<!-- IF S_NYD_SNOW_TYPE == '11' -->
+		<!-- INCLUDEJS @tatiana5_newyeardecor/snowstorm/snowstorm-min.js -->
+	<!-- ENDIF -->
+<!-- ENDIF -->
+
+<!-- IF S_NYD_USER_GARLAND -->
+	<!-- IF S_NYD_GARLAND_TYPE == '1' -->
+		<script>
+			var garland_steps = [3, 0, 3, 0, 3, 3, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 0];
+
+			function garland(garland_img) {
+				var nums = $('#nums_1').html();
+
+				//garland_img.attr('class', 'garland_' + (nums % 4));
+				//$('#nums_1').html((nums % 4) + 1);
+				
+				garland_img.attr('class', 'garland_' + garland_steps[nums - 1]);
+				$('#nums_1').html((nums % 21) + 1);
+			}
+
+			function stop_garland() {
+				clearInterval(garland_interval);
+				$('#garland').attr('class', 'garland_3');
+				$('#nums_1').html('4');
+			}
+
+			function start_garland() {
+				var garland_img = $('#garland');
+				garland_interval = setInterval(function(){garland(garland_img)}, 550);
+			}
+
+			$('i.garland-on, i.garland-off').click(function() {
+				if ($(this).hasClass('garland-on')) {
+					stop_garland();
+					localStorage['garland'] = 'off';
+				} else {
+					start_garland();
+					localStorage['garland'] = 'on';
+				}
+
+				$(this).toggleClass('garland-on').toggleClass('garland-off');
+			});
+
+			function ball_animate()	{
+				$('.christmas-ball').remove();
+				var balls_count = Math.floor($(window).width() / 330);
+
+				if ($(window).width() % 330 > 130) {
+					balls_count += 1;
+				}
+
+				for (let i = 0; i < balls_count; i++)
+				{
+					$('.elka').append('<div class="christmas-ball" style="left: ' + (330*i+81) + 'px;"></div>');
+				}
+
+				$('.elka').attr('style', 'background-image: url("./ext/tatiana5/newyear/styles/all/theme/images/elochka2.png");');		
+			}
+
+			$(window).on('resize', ball_animate);
+
+			$('.elka').on('click', '.christmas-ball',  function() {
+				if (localStorage['garland'] == 'on')
+				{
+					old_next_position = 147;
+					start_ball_animation($(this), 3000, 147);
+				}
+			});
+
+			function start_ball_animation(ball, time, position) {
+				var pos_step = 12,
+					time_step = -70,
+					position_start = 147,
+					next_position = (position > 0) ? position : (position_start + position),
+					is_stop_animation = false;
+
+				ball.animate({
+					'background-position-x': next_position + 'px',
+				}, time, 'swing', function() {
+					time+= time_step;
+
+					if (position > 0)
+					{
+						position-= pos_step;
+						is_stop_animation = (Math.abs(next_position - position_start) > position_start/2 + 2*pos_step);
+					} else {
+						position += pos_step;
+						is_stop_animation = (Math.abs(next_position - position_start) < position_start/2 + 2*pos_step);
+					}
+
+					position = -position;
+
+					if (is_stop_animation) {
+						ball.stop();
+						next_position = (position > 0) ? (next_position + Math.round(3*pos_step/4)) : (next_position - Math.round(3*pos_step/4));
+						ball.animate({
+							'background-position-x': next_position + 'px'
+						}, 1000, 'swing');
+					} else {
+						start_ball_animation(ball, time, position);
+					}
+				});
+			}
+
+			$(document).ready(function() {
+				if ((typeof localStorage['garland'] === "undefined") || localStorage['garland'] == 'on') {
+					localStorage['garland'] = 'on'
+					start_garland();
+				} else {
+					$('i.garland-on').toggleClass('garland-on').toggleClass('garland-off');
+				}
+
+				ball_animate();
+			});
+		</script>
+	<!-- ENDIF -->
+
+	<!-- IF S_NYD_GARLAND_TYPE == '2' -->
+		<!-- INCLUDEJS swfobject.min.js -->
+		<!-- INCLUDEJS newyear.js -->
+		<!-- INCLUDEJS garlands.js -->
+	<!-- ENDIF -->
+
+	<!-- IF S_NYD_GARLAND_TYPE == '3' -->
+		<!-- INCLUDEJS @tatiana5_newyeardecor/snowstorm/lights/soundmanager2-nodebug-jsmin.js -->
+		<!-- INCLUDEJS @tatiana5_newyeardecor/snowstorm/lights/animation-min.js -->
+		<!-- INCLUDEJS @tatiana5_newyeardecor/snowstorm/lights/christmaslights.js -->
+		<!-- INCLUDEJS @tatiana5_newyeardecor/snowstorm/lights/init.js -->
+	<!-- ENDIF -->
+<!-- ENDIF -->

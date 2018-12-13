@@ -1,0 +1,28 @@
+{
+    "name": "tatiana5/newyeardecor",
+    "type": "phpbb-extension",
+    "description": "New Year Decor",
+    "homepage": "http://www.phpbbguru.net/community/",
+    "version": "0.0.1",
+    "time": "2018-12-13",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Татьяна5",
+            "homepage": "http://www.phpbbguru.net/community/",
+            "role": "developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "require-dev": {
+      "phpbb/epv": "dev-master"
+    },
+    "extra": {
+        "display-name": "New Year Decor",
+        "soft-require": {
+            "phpbb/phpbb": "3.1.*@dev"
+        }
+    }
+}

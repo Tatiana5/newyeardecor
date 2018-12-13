@@ -1,0 +1,57 @@
+<!-- IF S_NYD_USER_SNOW -->
+	<!-- IF S_NYD_SNOW_TYPE == '7' -->
+		<script type="text/processing" data-processing-target="canvas-5">
+		ArrayList<Particle> snow;
+		int snowLength = (nyd_snow_position) ? 30 : 300;
+
+		class Particle {
+		float x, y, speed, size;
+
+		Particle() {
+		x = random(width + 1);
+		y = random(height + 1);
+		var speed_max = (nyd_snow_position) ? 2.0 : 3.0;
+		speed = random(0.5, speed_max);
+		size = random(2.0, 10.0);
+		}
+
+		void update() {
+		if (y + speed >= height) {
+		x = random(width + 1);
+		y = 0;
+		}
+		else
+		y += speed;
+		fill(255);
+		ellipse(x, y, size, size);
+		}
+		}
+
+		void setup() {
+		var canvas_width = (nyd_snow_position) ? $('.headerbar').outerWidth() : $(document).width();
+		var canvas_height = (nyd_snow_position) ? $('.headerbar').outerHeight() : $(document).height();
+		size(canvas_width, canvas_height);
+		noStroke();
+		smooth();
+		snow = new ArrayList<Particle>();
+		createParticles();
+		}
+
+		void draw() {
+		background(#394F79);
+		for (Particle s : snow)
+		s.update();
+		drawLandscape();
+		}
+
+		void createParticles() {
+		for (int i = 0; i < snowLength; i++)
+		snow.add(new Particle());
+		}
+
+		void drawLandscape() {
+		rect(0, height-10, width, 10);
+		}
+		</script>
+	<!-- ENDIF -->
+<!-- ENDIF -->

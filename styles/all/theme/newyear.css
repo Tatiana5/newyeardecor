@@ -1,0 +1,85 @@
+/*body {
+	padding-top: 27px;
+	background-color: #1C1C1C;
+}*/
+
+#garland {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-image: url('./images/christmas-lights.png');
+	height: 36px;
+	width: 100%;
+	overflow: hidden;
+	z-index:6;
+	pointer-events: none;
+}
+
+#nums_1 {
+	padding: 100px;
+	pointer-events: none;
+}
+
+.garland_0 {
+	background-position: 0 0;
+}
+
+.garland_1 {
+	background-position: 0 -36px;
+}
+
+.garland_2 {
+	background-position: 0 -72px;
+}
+
+.garland_3 {
+	background-position: 0 -108px;
+}
+
+.garland-on, .garland-off {
+	position: absolute;
+	font-size: 16px;
+	right: 10px;
+	top: 90px;
+	cursor: pointer;
+	padding: 5px;
+	background: white;
+	border-radius: 20px;
+}
+
+.garland-on {
+	color: #329C00;
+	text-shadow: 0 0 7px #8DFC46;
+}
+.elka {
+	position:relative;
+	margin: -12px 0 -50px 0;
+	height:90px;
+	width:auto;
+	background-repeat: repeat-x;
+	background-image: url('./images/elochka.png');
+	z-index: 5;
+}
+
+.christmas-ball {
+	position: absolute;
+	top: 17px;
+	background-image: url('./images/star.png');
+	border-radius: 50%;
+	width: 49px;
+	height: 49px;
+}
+
+.christmas-ball:hover {
+	cursor: pointer;
+}
+@media only screen and (max-width: 700px), only screen and (max-device-width: 700px) {
+
+.elka_responsive {
+	margin: -12px 0 20px 0;
+	}
+body {
+	padding-top: 10px;
+	}
+}
+

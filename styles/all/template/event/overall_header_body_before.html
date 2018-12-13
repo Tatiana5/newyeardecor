@@ -1,0 +1,44 @@
+<!-- IF S_NYD_USER_SNOW -->
+	<!-- IF not(S_NYD_SNOW_POSITION) -->
+		<!-- IF S_NYD_SNOW_TYPE == '1' -->
+			<!-- // Let It Snow -->
+			<canvas width="100" height="100" class="snow"></canvas>
+		<!-- ENDIF -->
+		<!-- IF S_NYD_SNOW_TYPE == '7' -->
+			<!-- // Parallax Snow -->
+			<canvas id="canvas-5"></canvas>
+		<!-- ENDIF -->
+		<!-- IF S_NYD_SNOW_TYPE == '9' -->
+			<!-- // Interactive snow -->
+			<canvas id="canvas"></canvas>
+		<!-- ENDIF -->
+	<!-- ENDIF -->
+<!-- ENDIF -->
+
+<!-- IF S_NYD_USER_GARLAND -->
+	<!-- IF S_NYD_GARLAND_TYPE == '1' -->
+		<div class="elka_responsive">
+
+		<i class="fa fa-power-off garland-on"></i>
+		<div class="elka">
+		<div id="garland" class="garland_3"> 
+			<div id="nums_1">4</div>
+		</div>
+		</div>
+		</div>
+	<!-- ENDIF -->
+
+	<!-- IF S_NYD_GARLAND_TYPE == '3' -->
+		<div id="lights"></div>
+	<!-- ENDIF -->
+
+	<!-- IF S_NYD_GARLAND_TYPE > 3 and S_NYD_GARLAND_TYPE < 11 -->
+		<div class="garland"></div>
+	<!-- ENDIF -->
+<!-- ENDIF -->
+
+<!-- IF S_NYD_USER_IMAGE -->
+	<!-- IF S_NYD_IMAGE_TYPE > 0 and S_NYD_IMAGE_TYPE < 7 -->
+		<img class="new_year_tree" src="{ROOT_PATH}ext/tatiana5/newyeardecor/styles/all/theme/images/tree_brunch{S_NYD_IMAGE_TYPE}.png" />
+	<!-- ENDIF -->
+<!-- ENDIF -->

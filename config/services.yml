@@ -1,0 +1,16 @@
+services:
+    tatiana5.newyeardecor.listener:
+        class: tatiana5\newyeardecor\event\listener
+        arguments:
+            - '@config'
+            - '@template'
+            - '@user'
+            - '@tatiana5.newyeardecor.cp_helper'
+        tags:
+            - { name: event.listener }
+
+    tatiana5.newyeardecor.cp_helper:
+        class: tatiana5\newyeardecor\functions\cp_helper
+        arguments:
+            - '@config'
+            - '@request'

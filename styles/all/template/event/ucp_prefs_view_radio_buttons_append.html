@@ -1,0 +1,29 @@
+<!-- IF S_NYD_SNOW_TYPE > 0 -->
+	<dl>
+		<dt><label for="nyd_snow1">{L_NYD_USER_SNOW}{L_COLON}</label></dt>
+		<dd>
+			<label for="nyd_snow1"><input type="radio" name="nyd_snow" id="nyd_snow1" value="1"<!-- IF S_NYD_USER_SNOW --> checked="checked"<!-- ENDIF --> /> {L_YES}</label>
+			<label for="nyd_snow0"><input type="radio" name="nyd_snow" id="nyd_snow0" value="0"<!-- IF not S_NYD_USER_SNOW --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+		</dd>
+	</dl>
+<!-- ENDIF -->
+
+<!-- IF S_NYD_GARLAND_TYPE > 0 -->
+	<dl>
+		<dt><label for="nyd_garland1">{L_NYD_USER_GARLAND}{L_COLON}</label></dt>
+		<dd>
+			<label for="nyd_garland1"><input type="radio" name="nyd_garland" id="nyd_garland1" value="1"<!-- IF S_NYD_USER_GARLAND --> checked="checked"<!-- ENDIF --> /> {L_YES}</label>
+			<label for="nyd_garland0"><input type="radio" name="nyd_garland" id="nyd_garland0" value="0"<!-- IF not S_NYD_USER_GARLAND --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+		</dd>
+	</dl>
+<!-- ENDIF -->
+
+<!-- IF S_NYD_IMAGE_TYPE > 0 -->
+	<dl>
+		<dt><label for="nyd_image1">{L_NYD_USER_IMAGE}{L_COLON}</label></dt>
+		<dd>
+			<label for="nyd_image1"><input type="radio" name="nyd_image" id="nyd_image1" value="1"<!-- IF S_NYD_USER_IMAGE --> checked="checked"<!-- ENDIF --> /> {L_YES}</label>
+			<label for="nyd_image0"><input type="radio" name="nyd_image" id="nyd_image0" value="0"<!-- IF not S_NYD_USER_IMAGE --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+		</dd>
+	</dl>
+<!-- ENDIF -->

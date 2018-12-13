@@ -1,0 +1,209 @@
+<!-- IF S_NYD_USER_SNOW -->
+	<style>
+	<!-- IF S_NYD_SNOW_TYPE == '1' -->
+		.snow {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index:0;
+		}
+
+		<!-- IF S_NYD_SNOW_POSITION -->
+			.headerbar, #logo, #search-box {
+				position: relative;
+			}
+
+			.snow {
+				border-radius: 5px;
+			}
+		<!-- ELSE -->
+			#wrap {
+				position: relative;
+			}
+
+			body {
+				background-color: #CADCEB;
+			}
+		<!-- ENDIF -->
+	<!-- ENDIF -->
+
+	<!-- IF S_NYD_SNOW_TYPE == '7' -->
+		#canvas-5 {
+			width: 100%;
+			padding: 0;
+			display: block;
+			margin: 0 auto;
+			outline: none;
+			position: absolute;
+			top: 0px;
+			z-index: 0;
+		}
+
+		<!-- IF S_NYD_SNOW_POSITION -->
+			.headerbar, .headerbar .inner, #search-box {
+				position: relative;
+			}
+
+			#canvas-5 {
+				border-radius: 5px;
+				left: 0;
+				border: 1px solid #CADCEB;
+			}
+		<!-- ELSE -->
+			#wrap {
+				position: relative;
+			}
+		<!-- ENDIF -->
+	<!-- ENDIF -->
+
+	<!-- IF S_NYD_SNOW_TYPE == '8' -->
+		body {
+			background-color: #CADCEB;
+		}
+
+		.svg-snowscene {
+			width: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			pointer-events: none;
+		}
+		 
+		.snow {
+			fill: #fff;
+			animation-name: snowing;
+			animation-duration: 3s;
+			animation-iteration-count: infinite;
+			animation-timing-function: ease-out;
+		}
+		.snow:nth-child(2n) {
+			animation-delay: 1.5s;
+		}
+		.snow:nth-child(3n) {
+			animation-delay: 2.3s;
+			animation-duration: 3.3s;
+		}
+		.snow:nth-child(4n) {
+			animation-delay: 0.8s;
+			animation-duration: 3.2s;
+		}
+		.snow:nth-child(5n) {
+			animation-delay: 2.8s;
+		}
+		 
+		@keyframes snowing {
+			0% {
+				fill-opacity: 1;
+			}
+			100% {
+				fill-opacity: 0;
+				transform: translateY(200px);
+			}
+		}
+	<!-- ENDIF -->
+
+	<!-- IF S_NYD_SNOW_TYPE == '9' -->
+		#canvas {
+			background-image: linear-gradient(bottom, rgb(105,173,212) 0%, rgb(23,82,145) 84%);
+			background-image: -moz-linear-gradient(bottom, rgb(105,173,212) 0%, rgb(23,82,145) 84%);
+			background-image: -webkit-linear-gradient(bottom, rgb(105,173,212) 0%, rgb(23,82,145) 84%);
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+
+		<!-- IF S_NYD_SNOW_POSITION -->
+			.headerbar, #logo, #search-box {
+				position: relative;
+			}
+
+			#canvas {
+				border-radius: 5px;
+			}
+		<!-- ELSE -->
+			#wrap {
+				position: relative;
+			}
+		<!-- ENDIF -->
+	<!-- ENDIF -->
+	</style>
+<!-- ENDIF -->
+
+<!-- IF S_NYD_USER_GARLAND -->
+	<!-- IF S_NYD_GARLAND_TYPE == '1' -->
+		<!-- INCLUDECSS @tatiana5_newyeardecor/newyear.css -->
+	<!-- ENDIF -->
+
+	<!-- IF S_NYD_GARLAND_TYPE == '2' -->
+		<!-- INCLUDECSS @tatiana5_newyeardecor/motnya.css -->
+	<!-- ENDIF -->
+
+	<!-- IF S_NYD_GARLAND_TYPE == '3' -->
+		<!-- INCLUDECSS snowstorm/lights/christmaslights.css -->
+	<!-- ENDIF -->
+
+	<!-- IF S_NYD_GARLAND_TYPE > 3 and S_NYD_GARLAND_TYPE < 11 -->
+	<style>
+		div.garland {
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 50;
+			width: 100%;
+			background-repeat: repeat-x;
+			pointer-events: none;
+			<!-- IF S_NYD_GARLAND_TYPE == '4' -->
+				height: 30px;
+				background-image: url("{ROOT_PATH}ext/tatiana5/newyeardecor/styles/all/theme/images/garlands/1.gif");
+			<!-- ELSEIF S_NYD_GARLAND_TYPE == '5' -->
+				height: 46px;
+				background-image: url("{ROOT_PATH}ext/tatiana5/newyeardecor/styles/all/theme/images/garlands/2.gif");
+			<!-- ELSEIF S_NYD_GARLAND_TYPE == '6' -->
+				height: 48px;
+				background-image: url("{ROOT_PATH}ext/tatiana5/newyeardecor/styles/all/theme/images/garlands/3.gif");
+			<!-- ELSEIF S_NYD_GARLAND_TYPE == '7' -->
+				height: 69px;
+				background-image: url("{ROOT_PATH}ext/tatiana5/newyeardecor/styles/all/theme/images/garlands/4.gif");
+			<!-- ELSEIF S_NYD_GARLAND_TYPE == '8' -->
+				height: 45px;
+				background-image: url("{ROOT_PATH}ext/tatiana5/newyeardecor/styles/all/theme/images/garlands/5.gif");
+			<!-- ELSEIF S_NYD_GARLAND_TYPE == '9' -->
+				height: 32px;
+				background-image: url("{ROOT_PATH}ext/tatiana5/newyeardecor/styles/all/theme/images/garlands/6.gif");
+				top: -1px;
+			<!-- ELSEIF S_NYD_GARLAND_TYPE == '10' -->
+				height: 106px;
+				background-image: url("{ROOT_PATH}ext/tatiana5/newyeardecor/styles/all/theme/images/garlands/7.png");
+			<!-- ENDIF -->
+		}
+
+		<!-- IF S_NYD_GARLAND_TYPE == '10' -->
+			#wrap {
+				margin-top: 32px;
+			}
+		<!-- ENDIF -->
+	</style>
+	<!-- ENDIF -->
+<!-- ENDIF -->
+
+<!-- IF S_NYD_USER_IMAGE -->
+	<!-- IF S_NYD_IMAGE_TYPE > 0 and S_NYD_IMAGE_TYPE < 7 -->
+		<style>
+			.new_year_tree {
+				position: absolute;
+				<!-- IF S_NYD_IMAGE_TYPE !== '6' -->
+					left: 0;
+				<!-- ENDIF -->
+				top: 0;
+				z-index: 2;
+				pointer-events: none;
+				max-width: 220px;
+				max-height: 220px;
+				<!-- IF S_NYD_IMAGE_TYPE == '6' -->
+					left: none;
+					right: 0;
+				<!-- ENDIF -->
+			}
+		</style>
+	<!-- ENDIF -->
+<!-- ENDIF -->
