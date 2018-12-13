@@ -1,0 +1,2 @@
+# newyeardecor
+phpBB extension
