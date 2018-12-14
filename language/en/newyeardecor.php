@@ -21,7 +21,7 @@ if (empty($lang) || !is_array($lang))
 }
 
 $lang = array_merge($lang, array(
-	'NYD_USER_SNOW'		=> 'Включить снег',
-	'NYD_USER_GARLAND'	=> 'Включить гирлянду',
-	'NYD_USER_IMAGE'	=> 'Включить новогоднюю картинку',
+	'NYD_USER_SNOW'		=> 'Enable snow',
+	'NYD_USER_GARLAND'	=> 'Enable garland',
+	'NYD_USER_IMAGE'	=> 'Enable New Year image',
 ));
