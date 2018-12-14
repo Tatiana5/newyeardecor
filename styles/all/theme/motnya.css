@@ -1,8 +1,5 @@
-.b-head-decor { display: none; }
-@media (min-width: 700px) {
-	#wrap { margin-top: 70px; }
-	.b-head-decor { display: block; }
-}
+#wrap { margin-top: 35px; }
+.b-head-decor { display: block; }
 .b-page_newyear .b-head-decor {
 	position: absolute;
 	top: 0;
@@ -11,6 +8,7 @@
 	width: 100%;
 	overflow: hidden;
 	background: url('./images/ri6dz10.png') repeat-x 0 0;
+	pointer-events: none;
 }
 
 .b-page_newyear .b-head-decor__inner{position:absolute;top:0;left:0;height:115px;display:block;width:373px}
@@ -22,7 +20,7 @@
 .b-page_newyear .b-head-decor__inner_n6{left:1865px}
 .b-page_newyear .b-head-decor__inner_n7{left:2238px}
 
-.b-ball{position:absolute}
+.b-ball{position:absolute; pointer-events: all;}
 .b-ball_n1{top:0;left:3px;width:59px;height:83px}
 .b-ball_n2{top:-19px;left:51px;width:55px;height:70px}
 .b-ball_n3{top:9px;left:88px;width:49px;height:67px}

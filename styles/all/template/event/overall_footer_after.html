@@ -23,7 +23,7 @@
 		<script>
 			$(document).ready(function() {
 				<!-- IF S_NYD_SNOW_TYPE == '2' -->
-					$(document).snowfall(deviceorientation : true);
+					$(document).snowfall({deviceorientation : true});
 				<!-- ELSEIF S_NYD_SNOW_TYPE == '3' -->
 					$(document).snowfall({deviceorientation : true, shadow : true, flakeCount:200});
 				<!-- ELSEIF S_NYD_SNOW_TYPE == '4' -->
@@ -131,7 +131,7 @@
 		$(document).ready(function() {
 			var snow_height = (nyd_snow_position) ? ($('.headerbar').offset().top+$('.headerbar').outerHeight()) : $(document).height();
 			var snow_count = (nyd_snow_position) ? 16 : 35;
-			snowStorm = new SnowStorm("./ext/tatiana5/newyeardecor/styles/all/theme/images/snow/", snow_height, snow_count, snow_count);
+			snowStorm = new SnowStorm("{BOARD_URL}ext/tatiana5/newyeardecor/styles/all/theme/images/snow/", snow_height, snow_count, snow_count);
 		});
 		</script>
 	<!-- ENDIF -->
@@ -192,7 +192,7 @@
 					$('.elka').append('<div class="christmas-ball" style="left: ' + (330*i+81) + 'px;"></div>');
 				}
 
-				$('.elka').attr('style', 'background-image: url("./ext/tatiana5/newyear/styles/all/theme/images/elochka2.png");');		
+				$('.elka').attr('style', 'background-image: url("{BOARD_URL}ext/tatiana5/newyeardecor/styles/all/theme/images/elochka2.png");');		
 			}
 
 			$(window).on('resize', ball_animate);

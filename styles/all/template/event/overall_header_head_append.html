@@ -13,8 +13,10 @@
 				position: relative;
 			}
 
-			.snow {
-				border-radius: 5px;
+			@media only screen and (min-width: 700px), only screen and (min-device-width: 700px) {
+				.snow {
+					border-radius: 5px;
+				}
 			}
 		<!-- ELSE -->
 			#wrap {
@@ -48,6 +50,12 @@
 				border-radius: 5px;
 				left: 0;
 				border: 1px solid #CADCEB;
+			}
+
+			@media only screen and (max-width: 700px), only screen and (max-device-width: 700px) {
+				#canvas-5 {
+					border-radius: 0;
+				}
 			}
 		<!-- ELSE -->
 			#wrap {
@@ -117,8 +125,10 @@
 				position: relative;
 			}
 
-			#canvas {
-				border-radius: 5px;
+			@media only screen and (min-width: 700px), only screen and (min-device-width: 700px) {
+				#canvas {
+					border-radius: 5px;
+				}
 			}
 		<!-- ELSE -->
 			#wrap {
@@ -177,6 +187,21 @@
 			<!-- ENDIF -->
 		}
 
+		@media only screen and (max-width: 700px), only screen and (max-device-width: 700px) {
+			div.garland {
+				background-size: contain;
+				<!-- IF S_NYD_GARLAND_TYPE == '6' -->
+					height: 26px;
+				<!-- ELSEIF S_NYD_GARLAND_TYPE == '7' -->
+					height: 27px;
+				<!-- ELSEIF S_NYD_GARLAND_TYPE == '8' -->
+					height: 28px;
+				<!-- ELSEIF S_NYD_GARLAND_TYPE == '10' -->
+					height: 60px;
+				<!-- ENDIF -->
+			}
+		}
+
 		<!-- IF S_NYD_GARLAND_TYPE == '10' -->
 			#wrap {
 				margin-top: 32px;
@@ -191,18 +216,23 @@
 		<style>
 			.new_year_tree {
 				position: absolute;
-				<!-- IF S_NYD_IMAGE_TYPE !== '6' -->
-					left: 0;
-				<!-- ENDIF -->
 				top: 0;
 				z-index: 2;
 				pointer-events: none;
 				max-width: 220px;
 				max-height: 220px;
 				<!-- IF S_NYD_IMAGE_TYPE == '6' -->
-					left: none;
 					right: 0;
+				<!-- ELSE -->
+					left: 0;
 				<!-- ENDIF -->
+			}
+
+			@media only screen and (max-width: 700px), only screen and (max-device-width: 700px) {
+				.new_year_tree {
+					max-width: 100px;
+					max-height: 100px;
+				}
 			}
 		</style>
 	<!-- ENDIF -->

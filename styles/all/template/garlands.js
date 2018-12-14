@@ -139,9 +139,9 @@ function content_garlands() {/*==123==;
 </div>
  ==123==;*/}
 width = document.body.clientWidth;
-if (width > 700) {
+//if (width > 700) {
 	content_garlands = content_garlands.toString().split('==123==;')[1];
 	document.write(content_garlands);
 	document.getElementById("wrap").style.marginTop = 70;
 	document.getElementById("b-head-decor").style.display = 'block';
-}
+//}
