@@ -53,10 +53,10 @@ $lang = array_merge($lang, array(
 	'ACP_NYD_GARLAND_7'					=> 'Garland 7',
 	//
 	'ACP_NYD_IMAGE_TYPE'				=> 'Image',
-	'ACP_NYD_IMAGE_1'					=> 'Tree brunch 1',
-	'ACP_NYD_IMAGE_2'					=> 'Tree brunch 2',
-	'ACP_NYD_IMAGE_3'					=> 'Tree brunch 3',
-	'ACP_NYD_IMAGE_4'					=> 'Tree brunch 4',
-	'ACP_NYD_IMAGE_5'					=> 'Tree brunch 5',
-	'ACP_NYD_IMAGE_6'					=> 'Tree brunch 6',
+	'ACP_NYD_IMAGE_1'					=> 'Tree branch 1',
+	'ACP_NYD_IMAGE_2'					=> 'Tree branch 2',
+	'ACP_NYD_IMAGE_3'					=> 'Tree branch 3',
+	'ACP_NYD_IMAGE_4'					=> 'Tree branch 4',
+	'ACP_NYD_IMAGE_5'					=> 'Tree branch 5',
+	'ACP_NYD_IMAGE_6'					=> 'Tree branch 6',
 ));
